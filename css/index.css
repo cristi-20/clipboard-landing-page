@@ -141,7 +141,7 @@ p {
 }
 @media (min-width: 740px) {
   .header {
-    background-image: url("/frontendmentor/clipboard-landing-page/FrontendMentor Files/images/bg-header-desktop.png");
+    background-image: url("/FrontendMentor Files/images/bg-header-desktop.png");
   }
 }
 
