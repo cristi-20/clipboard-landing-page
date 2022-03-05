@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: none;
+}
+a:visited {
+  color: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  color: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input {
+  border: none;
+}
+
+:root {
+  font-size: 1.125rem;
+  font-family: "Bai Jamjuree", sans-serif;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+}
+
+.section {
+  gap: 4rem;
+  padding-inline: 1.5rem;
+}
+
+h1, h2, h3 {
+  color: #4c545d;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+}
+
+p {
+  margin-top: 1.2rem;
+  color: #4c545d;
+  line-height: 1.7;
+}
+@media (min-width: 480px) {
+  p {
+    max-width: 60ch;
+  }
+}
+
+.buttons {
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+.buttons button {
+  color: #fff;
+  font-size: 1.1rem;
+  padding-block: 0.7rem;
+  border-radius: 50px;
+}
+.buttons .ios_btn {
+  background-color: #1b8374;
+}
+.buttons .mac_btn {
+  background-color: #4657d2;
+}
+@media (min-width: 480px) {
+  .buttons {
+    max-width: 28rem;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .buttons button {
+    flex-grow: 2;
+  }
+}
+
+.header {
+  justify-items: center;
+  gap: 2.5rem;
+  padding-inline: 1.5rem;
+  background-image: url("/frontendmentor/clipboard-landing-page/FrontendMentor Files/images/bg-header-mobile.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.header .main_logo {
+  margin: 6rem 0 3rem 0;
+}
+@media (min-width: 480px) {
+  .header .main_logo {
+    max-width: 6.25rem;
+  }
+}
+.header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+@media (min-width: 740px) {
+  .header {
+    background-image: url("/frontendmentor/clipboard-landing-page/FrontendMentor Files/images/bg-header-desktop.png");
+  }
+}
+
+.services {
+  flex-direction: column;
+  align-items: center;
+}
+.services ul {
+  gap: 4rem;
+  flex-direction: column;
+  max-width: 35ch;
+}
+.services .apple_computer {
+  margin-block: 3rem;
+}
+@media (min-width: 480px) {
+  .services .apple_computer {
+    max-width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .services .apple_computer {
+    width: 800px;
+  }
+}
+.services .services_wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .services .services_wrapper {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+  .services .services_wrapper .apple_computer {
+    margin-block: 0;
+    position: relative;
+    left: -200px;
+  }
+}
+
+.features .grid {
+  width: 100%;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  .features .grid {
+    gap: 0;
+  }
+}
+.features .card {
+  min-height: 100%;
+  max-width: 350px;
+  background: #f7f7f7;
+  padding-inline: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 5px;
+}
+.features .card .card_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.features .card .card_title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.brands {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 4rem;
+}
+.brands img {
+  width: 160px;
+}
+
+.download {
+  background: #4657d2;
+  background-repeat: no-repeat;
+  background-image: url("../FrontendMentor Files/images/bg-boost-mobile.svg");
+  background-size: cover;
+  padding-block: 4rem;
+  padding-bottom: 7rem;
+  position: relative;
+  clip-path: polygon(100% 0, 100% 89%, 0 100%, 0 0);
+}
+.download:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: -100;
+}
+.download h2, .download p {
+  color: #fff;
+}
+.download .ios_btn, .download .mac_btn {
+  background: #1b8374;
+}
+@media (min-width: 960px) {
+  .download {
+    background-image: url("../FrontendMentor Files/images/bg-boost-desktop.svg");
+  }
+}
+
+footer {
+  background: #f7f7f7;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  flex-direction: column;
+  align-items: center;
+}
+footer .wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  footer .wrapper {
+    flex-direction: row;
+    gap: 7rem;
+  }
+}
+footer .footer_logo {
+  width: 3rem;
+  margin-block: 3rem;
+}
+footer ul {
+  flex-direction: column;
+  gap: 0;
+}
+footer ul li {
+  margin-bottom: 2rem;
+  color: #4c545d;
+}
+@media (min-width: 960px) {
+  footer ul {
+    flex-direction: row;
+    text-align: left;
+    gap: 5rem;
+  }
+  footer ul li {
+    margin: 0;
+    line-height: 2;
+  }
+}
+footer .social-icons {
+  gap: 3rem;
+  margin-block: 3rem;
+}
+@media (min-width: 740px) {
+  footer .social-icons {
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 960px) {
+  footer {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}

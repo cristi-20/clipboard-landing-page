@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+@import 'variables';
+@import 'breakpoints';
+@import 'reset';
+
+:root {
+    font-size:1.125rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+    overflow-x:hidden;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    text-align: center; 
+    max-width: 1440px;
+    margin:0 auto;
+}
+
+img {
+    max-width: 100%;
+   
+}
+
+// Utilities
+.flex {
+    display: flex;
+}
+
+
+.grid {
+    display:grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+.section {
+    gap:4rem;
+    padding-inline:1.5rem;
+}
+
+h1,h2,h3 {
+    color:$darkGrayishBlue;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size:clamp(1.5rem,5vw,1.8rem) ;
+}
+
+p {
+    margin-top: 1.2rem;
+    color:$darkGrayishBlue;
+    line-height: 1.7;
+    
+    @include sm {
+        max-width: 60ch;
+    }
+}
+
+.buttons {
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    button {
+    color:#fff;
+    font-size: 1.1rem;
+    padding-block:.7rem;
+    border-radius:50px;
+    }
+
+    .ios_btn {
+        background-color:$strongCyan;
+    }
+
+    .mac_btn {
+        background-color:$lightBlue;
+    }
+
+    @include sm {
+        max-width:28rem;
+        flex-direction: row;
+        justify-content: center;
+        
+        button {
+            flex-grow: 2;
+        }
+    }
+    }
+
+// Header
+.header {
+justify-items: center;
+gap:2.5rem;
+padding-inline:1.5rem;
+background-image: url('/frontendmentor/clipboard-landing-page/FrontendMentor Files/images/bg-header-mobile.png');
+background-repeat: no-repeat;
+background-size:100%;
+background-position: top;
+margin-left: calc(50% - 50vw);
+margin-right: calc(50% - 50vw);
+
+
+.main_logo {
+    margin:6rem 0 3rem 0;
+
+    @include sm {
+        max-width: 6.25rem;
+    }
+}
+
+h1 {
+    font-size: clamp(1.8rem,5vw,2.2rem);
+}
+
+@include md {
+    background-image:url('/frontendmentor/clipboard-landing-page/FrontendMentor Files/images/bg-header-desktop.png') ;
+}
+}
+
+// Services Section
+.services {
+    flex-direction: column;
+   align-items: center;
+//    gap: 4rem;
+    
+ul {
+    gap:4rem;
+    flex-direction: column;
+    max-width: 35ch;
+}
+
+.apple_computer {
+        margin-block:3rem;
+
+ @include sm {
+     max-width: 70%;
+ }
+
+ @include xl {
+     width:800px;
+ }
+    }
+
+    .services_wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+@include lg {
+    .services_wrapper {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+
+        .apple_computer {
+           margin-block:0;
+            position:relative;
+            left:-200px;
+        }
+    }
+}
+}
+
+// Features Section
+.features {
+    .grid {
+        width: 100%;
+        gap:2rem;
+        grid-template-columns: repeat(auto-fit,minmax(270px,1fr) );
+        align-items:center;
+
+        @include xl {
+            gap:0;
+        }
+    }
+
+    .card {
+      
+       min-height: 100%;
+        max-width: 350px;
+        background:darken(#fff,3);
+        padding-inline:2rem;
+        padding-bottom:2rem;
+        border-radius:5px;
+
+        .card_icon {
+            display: flex;
+justify-content: center;
+align-items: center;
+margin:2rem 0;
+        }
+
+        .card_title {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+    }
+}
+
+// Brands
+.brands {
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr) );
+    justify-items: center;
+    gap:4rem;
+    img {
+        width:160px;
+    }
+}
+
+// Download 
+.download {
+    background:$lightBlue;
+    background-repeat: no-repeat;
+    background-image: url('../FrontendMentor Files/images/bg-boost-mobile.svg');
+    background-size: cover;
+    padding-block:4rem;
+    padding-bottom: 7rem;
+    position: relative;
+    clip-path: polygon(100% 0, 100% 89%, 0 100%, 0 0);
+
+    &:after {
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:hsla(0, 0, 0, 5%);
+        z-index:-100;
+    }
+
+
+    h2,p {
+        color:#fff;
+    }
+
+    .ios_btn,.mac_btn {
+        background:$strongCyan;
+    }
+
+    @include lg {
+        background-image: url('../FrontendMentor Files/images/bg-boost-desktop.svg');
+       
+    }
+}
+
+// Footer
+footer {
+    background:darken(#fff,3);
+    margin-left: calc(50% - 50vw);
+margin-right: calc(50% - 50vw);
+flex-direction: column;
+align-items: center;
+
+.wrapper {
+    flex-direction: column;
+    align-items: center;
+
+
+    @include lg {
+        flex-direction: row;
+        gap:7rem;
+    }
+}
+
+    .footer_logo {
+        width:3rem;
+        margin-block:3rem;
+    }
+
+    ul {
+        flex-direction: column;
+        gap:0;
+
+        li {
+            margin-bottom: 2rem;
+            color:$darkGrayishBlue;
+        }
+
+        @include lg {
+       flex-direction: row;
+       text-align: left;
+       gap:5rem;
+
+       li {
+           margin:0;
+           line-height: 2;
+       }
+        }
+    }
+
+   .social-icons {
+       gap:3rem;
+       margin-block:3rem;
+
+       @include md {
+           gap:1.5rem;
+       }
+   }
+
+   @include lg {
+       justify-content: space-around;
+       flex-direction: row;
+   }
+}
